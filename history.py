@@ -5,7 +5,6 @@ import os
 import google.generativeai as genai
 import streamlit as st
 
-GOOGLE_API_KEY='AIzaSyBtCNXNBF0JGNG323shPQm_wjTpFSo9cUM'
 genai.configure(api_key=GOOGLE_API_KEY)
 
 model=genai.GenerativeModel('gemini-2.5-flash')
@@ -44,4 +43,5 @@ if submit and input1 or input2 or input3 or input4:
 st.subheader("The Chat History is")
 
 for role, text in st.session_state['chat_history']:
+
     st.write(f"{role}: {text}")
